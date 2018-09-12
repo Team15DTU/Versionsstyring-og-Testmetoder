@@ -33,7 +33,7 @@ public class Main {
                 Start by getting the height of the cylinder, and check if input is positive
                 ------------------------------------------------------------------------------------
                  */
-                System.out.print("Indtast højden på cylinderen: ");
+                System.out.print("Indtast højden(i meter) på cylinderen: ");
                 String userInput0 = scan.next();    // Getting the height of the cylinder
                 double height = Double.parseDouble(userInput0); // Parsing the String to a useful double
 
@@ -48,7 +48,7 @@ public class Main {
                 Then get the radius of the cylinder and check if input is positive
                 ------------------------------------------------------------------------------------
                  */
-                System.out.print("Indtast radius på cylinderen: ");
+                System.out.print("Indtast radius (i meter) på cylinderen: ");
                 String userInput1 = scan.next();    // Getting the radius of the cylinder
                 double radius = Double.parseDouble(userInput1); // Parsing the String to a useful double
 
@@ -63,7 +63,7 @@ public class Main {
                 Now call the calcCylVol, and print out the calculated result.
                 ------------------------------------------------------------------------------------
                  */
-                System.out.println("Rumfanget af din cylinder er: " + calcCylVol(height, radius));
+                System.out.println("Rumfanget af din cylinder er: " + calcCylVol(height, radius) + " m^2");
 
                 // STOP LOOP
                 break;
@@ -109,44 +109,4 @@ public class Main {
         // Return the calculated result
         return result;
     }
-
-    /**
-     * This method calculates the volume from user inputs
-     */
-    public static void volume()
-    {
-        // Create Scanner
-        Scanner s = new Scanner(System.in);
-
-        try {
-            // Ask for Height
-            System.out.println("Indtast højde");
-            String first = s.next();
-            double tal1 = Double.parseDouble(first);
-
-            System.out.println("så højden er " + tal1);
-
-            // Ask for Radius
-            System.out.println("hvad er radius?");
-            String second = s.next();
-            double tal2 = Double.parseDouble(second);
-
-            System.out.println("så radius er " + tal2);
-
-            // Calculate
-            System.out.println("så rumfanget er " + (tal1*tal2*tal2*Math.PI));
-        }
-
-        catch (NumberFormatException e)
-        {
-            // Print error message
-            System.out.println("Fejl i input, prøv igen");
-            volume();   // Run method again
-        }
-
-        // Close scanner
-        s.close();
-
-
-    }
-}
+   }
