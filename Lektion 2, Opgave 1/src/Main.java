@@ -107,7 +107,7 @@ public class Main {
         double result = height*radius*radius*Math.PI;
         
         // Round the result
-        result = Math.round( (result*100.0) / 100.0 );
+        result = Math.round(result*100.0) / 100.0;
 
         // Return the calculated result
         return result;
