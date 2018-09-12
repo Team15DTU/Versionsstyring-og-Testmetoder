@@ -1,3 +1,16 @@
+/**
+ * @author Gruppe 15
+ * Navn og studienummer:
+ * Karl Emil Jeppesen       s180557
+ * Alfred Röttger Rydahl    s160107
+ * Said Abdullahi           s185013
+ * Søren Poulsen            s180905
+ * Rasmus Sander Larsen     s185097
+ * Noah F. M. Hamza         s185084
+ * Dato: 11-09-2018
+ * SWT/ITØ Danmarks Tekniske Universitet
+ */
+
 import java.util.Scanner;
 
 public class Main {
