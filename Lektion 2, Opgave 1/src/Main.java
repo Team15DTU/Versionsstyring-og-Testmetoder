@@ -106,6 +106,9 @@ public class Main {
         // Calculate the result
         double result = height*radius*radius*Math.PI;
 
+        // Round to two decimals
+        result = Math.round(result*100.0) / 100.0;
+
         // Return the calculated result
         return result;
     }
