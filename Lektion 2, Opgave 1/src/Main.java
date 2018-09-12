@@ -63,7 +63,7 @@ public class Main {
                 Now call the calcCylVol, and print out the calculated result.
                 ------------------------------------------------------------------------------------
                  */
-                System.out.println("Rumfanget af din cylinder er: " + calcCylVol(height, radius) + " m^2");
+                System.out.println("Rumfanget af din cylinder er: " + calcCylVol(height, radius) + " m^3");
 
                 // STOP LOOP
                 break;
@@ -105,6 +105,9 @@ public class Main {
     {
         // Calculate the result
         double result = height*radius*radius*Math.PI;
+        
+        // Round the result
+        result = Math.round( (result*100.0) / 100.0 );
 
         // Return the calculated result
         return result;
