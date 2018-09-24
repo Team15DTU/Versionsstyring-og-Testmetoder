@@ -1,31 +1,57 @@
 package automat;
 
-import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class BilletautomatTest {
+    Billetautomat billettest = new Billetautomat();
 
-    Billetautomat billetautomatTest = new Billetautomat();
-
-    @Test
-    public void getBalance() {
-
-        assertEquals(0, billetautomatTest.getBalance());
-
+    @org.junit.Test
+    public void getBilletpris() {
+        billettest.getBilletpris();
+        assertEquals(10,  billettest.getBilletpris());
     }
 
-    @Test
-    public void returPenge() {
-
-        assertEquals(0, billetautomatTest.returpenge());
-    }
-
-    @Test
+    @org.junit.Test
     public void indsætPenge() {
+        billettest.indsætPenge(100);
+        assertEquals(billettest.getBalance(),100);
+    }
 
-        billetautomatTest.indsætPenge(100);
-        assertEquals(100, billetautomatTest.getBalance());
+    @org.junit.Test
+    public void getBalance() {
+        billettest.getBalance();
+        assertEquals(billettest.getBalance(),0);
+   }
 
+    @org.junit.Test
+    public void returpenge() {
+    }
+
+    @org.junit.Test
+    public void montørLogin() {
+    }
+
+    @org.junit.Test
+    public void getTotal() {
+    }
+
+    @org.junit.Test
+    public void getAntalBilletterSolgt() {
+    }
+
+    @org.junit.Test
+    public void setBilletpris() {
+    }
+
+    @org.junit.Test
+    public void nulstil() {
+    }
+
+    @org.junit.Test
+    public void setAntalBilletterSolgt() {
+    }
+
+    @org.junit.Test
+    public void erMontør() {
     }
 }
