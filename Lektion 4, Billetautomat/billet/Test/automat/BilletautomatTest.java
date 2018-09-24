@@ -7,20 +7,19 @@ public class BilletautomatTest {
 
     @org.junit.Test
     public void getBilletpris() {
-        billettest.getBilletpris();
         assertEquals(10,  billettest.getBilletpris());
     }
 
     @org.junit.Test
     public void indsætPenge() {
         billettest.indsætPenge(100);
-        assertEquals(billettest.getBalance(),100);
+        assertEquals(100, billettest.getBalance());
     }
 
     @org.junit.Test
     public void getBalance() {
-        billettest.getBalance();
-        assertEquals(billettest.getBalance(),0);
+
+        assertEquals(0 ,billettest.getBalance());
    }
 
     @org.junit.Test
