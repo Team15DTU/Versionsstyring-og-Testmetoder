@@ -20,7 +20,9 @@ import java.lang.Math;
 
 public class Die {
 
-    public boolean DieCheck (int rolls) {
+    int FaceValue;
+
+    public boolean DieCheck (int rolls) {   //Denne funnktion tester en terning mod et antal kast med Chi2 testen.
         int j = 0;
         boolean valid = false;
         double exp = rolls/6.0;
@@ -34,30 +36,24 @@ public class Die {
 
         for (int i = 0; i <= 5; i++) {
             chi2[i] = ((faces[i]-exp)*(faces[i]-exp))/exp;
-            System.out.println("chi"+i+"is"+chi2[i]+"and face number is "+faces[i]);
         }
 
         double chiSum = chi2[0]+chi2[1]+chi2[2]+chi2[3]+chi2[4]+chi2[5];
-        System.out.println("chi sum is " + chiSum);
 
         if (chiSum < ChiCrit) {
             valid = true;
-            System.out.println("The dice is true");
-        } else {
-            System.out.println("The dice is uneven!");
         }
         return valid;
     }
 
     int[] faces = {0,0,0,0,0,0};
 
-    public int roll() {
-        int value = (int)(Math.random()*6) + 1;
-        DieSwitch(value);
-        return value;
-    }
+    public void roll() {        //Denne funktion 'kaster' terningen og sætter dens 'FaceValue' til den slåede værdi.
+        FaceValue = (int)(Math.random()*6) + 1;
+        DieSwitch(FaceValue);
+        }
 
-    public void DieSwitch (int value) {
+    public void DieSwitch (int value) {     //Denne funktion noterer hvor mange gange et tal er slået.
         switch (value) {
             case 1:
                 faces[0] = faces[0]+1;

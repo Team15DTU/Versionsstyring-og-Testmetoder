@@ -12,20 +12,14 @@ public class Main {
 
     public static void main (String args[]) {
 
-        int i = 0;
-        int totRolls = 10000;
-
-        Die die1 = new Die();
+        Die die1 = new Die(); //initialiserer instance af terningen.
         Die die2 = new Die();
 
-        while (i < totRolls) {
-            die1.roll();
-            die2.roll();
-            i++;
+        if (die1.DieCheck(10000) == true) { //test af en terning genne Chi2 test.
+            System.out.println("The tested dice is true.");
+        } else {
+            System.out.println("The tested dice is false.");
         }
-
-        die1.DieCheck(10000);
-
  }
 
 
