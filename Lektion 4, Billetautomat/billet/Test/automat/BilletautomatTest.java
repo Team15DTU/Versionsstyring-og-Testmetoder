@@ -7,6 +7,7 @@ public class BilletautomatTest {
 
     @org.junit.Test
     public void getBilletpris() {
+
         assertEquals(10,  billettest.getBilletpris());
     }
 
@@ -24,6 +25,8 @@ public class BilletautomatTest {
 
     @org.junit.Test
     public void returpenge() {
+
+        assertEquals(0, billettest.returpenge());
     }
 
     @org.junit.Test
@@ -32,10 +35,12 @@ public class BilletautomatTest {
 
     @org.junit.Test
     public void getTotal() {
+
     }
 
     @org.junit.Test
     public void getAntalBilletterSolgt() {
+
     }
 
     @org.junit.Test
