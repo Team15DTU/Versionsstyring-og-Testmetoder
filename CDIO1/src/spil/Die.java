@@ -18,26 +18,68 @@ import java.lang.Math;
  * SWT/ITØ Danmarks Tekniske Universitet
  */
 
-public class Die extends Main {
+public class Die {
 
-    //create structure Die
+    public boolean DieCheck (int rolls) {
+        int j = 0;
+        boolean valid = false;
+        double exp = rolls/6.0;
+        double chi2[] = {0,0,0,0,0,0};
+        double ChiCrit = 11.070; //critical value for df = 5 chi-squared.
 
-    int dots;
-    int roll;
-    int sum;
-    boolean equal = false;
-    Random number = new Random(); //initializes random number
+        while (j < rolls) {
+            roll();
+            j++;
+        }
 
-    private Die(){
-        int dots = number.nextInt(6)+1 ; //6 is maximum and minimum is one
+        for (int i = 0; i <= 5; i++) {
+            chi2[i] = ((faces[i]-exp)*(faces[i]-exp))/exp;
+            System.out.println("chi"+i+"is"+chi2[i]+"and face number is "+faces[i]);
+        }
+
+        double chiSum = chi2[0]+chi2[1]+chi2[2]+chi2[3]+chi2[4]+chi2[5];
+        System.out.println("chi sum is " + chiSum);
+
+        if (chiSum < ChiCrit) {
+            valid = true;
+            System.out.println("The dice is true");
+        } else {
+            System.out.println("The dice is uneven!");
+        }
+        return valid;
     }
 
-    public void roll(){
-        roll = number.nextInt(dots)+1;
+    int[] faces = {0,0,0,0,0,0};
+
+    public int roll() {
+        int value = (int)(Math.random()*6) + 1;
+        DieSwitch(value);
+        return value;
     }
 
-    public int getDots(){
-        return roll;
+    public void DieSwitch (int value) {
+        switch (value) {
+            case 1:
+                faces[0] = faces[0]+1;
+                break;
+            case 2:
+                faces[1] = faces[1]+1;
+                break;
+            case 3:
+                faces[2] = faces[2]+1;
+                break;
+            case 4:
+                faces[3] = faces[3]+1;
+                break;
+            case 5:
+                faces[4] = faces[4]+1;
+                break;
+            case 6:
+                faces[5] = faces[5]+1;
+                break;
+            default:
+                break;
+        }
     }
 
 }

@@ -1,3 +1,5 @@
+package spil;
+
 import spil.Die;
 
 /**
@@ -10,11 +12,23 @@ public class Main {
 
     public static void main (String args[]) {
 
-        Die die = new Die();
-        die.roll();
-        System.out.println("You rolled "+die.getDots()" in this round");
+        int i = 0;
+        int totRolls = 10000;
 
-    }
+        Die die1 = new Die();
+        Die die2 = new Die();
+
+        while (i < totRolls) {
+            die1.roll();
+            die2.roll();
+            i++;
+        }
+
+        die1.DieCheck(10000);
+
+ }
+
+
 
     /*
     private int getSum(Die one, Die two) {
