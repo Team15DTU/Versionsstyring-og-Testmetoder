@@ -1,6 +1,7 @@
 package spil;
 
 import spil.Die;
+import java.util.Scanner;
 
 /**
  * @author Gruppe 15
@@ -19,6 +20,8 @@ public class Main {
 
     public static void main (String args[]) {
 
+        Scanner scanner = new Scanner(System.in);
+
         Die die1 = new Die(); //initialiserer instance af terningen.
         Die die2 = new Die();
 
@@ -27,7 +30,38 @@ public class Main {
         } else {
             System.out.println("The tested dice is false.");
         }
- }
+
+        Player player1 = new Player();
+        System.out.println("Type player name:");
+        player1.name = scanner.next();
+
+        Player player2 = new Player();
+        System.out.println("Type player name:");
+        player1.name = scanner.next();
+
+        while (player1.score < 40 || player2.score < 40) {
+            System.out.println("Press 'r' to roll dice for player one");
+            player1.name = scanner.next();
+            die1.roll();
+            die2.roll();
+            System.out.println("You rolled " + die1.FaceValue + " and " + die2.FaceValue);
+            player1.score = player1.score + die1.FaceValue + die2.FaceValue;
+            System.out.println("Your score is " + player1.score+"\n");
+            System.out.println("Press 'r' to roll dice for player two");
+            player1.name = scanner.next();
+            die1.roll();
+            die2.roll();
+            player1.score = player1.score + die1.FaceValue + die2.FaceValue;
+            System.out.println("You rolled " + die1.FaceValue + " and " + die2.FaceValue);
+            System.out.println("Your score is " + player1.score+"\n");
+        }
+
+        if (player1.score > player2.score) {
+            System.out.printf("Player "+ player1.name+" won!");
+        } else {
+            System.out.printf("Player "+ player2.name+" won!");
+        }
+}
 
     /*
     private int getSum(Die one, Die two) {
