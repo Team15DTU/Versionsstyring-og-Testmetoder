@@ -1,6 +1,6 @@
 package spil;
 
-import sun.applet.Main;
+// import sun.applet.Main;
 
 import java.util.Random;
 import java.lang.Math;
@@ -30,15 +30,13 @@ public class Die {
      * @return
      */
     public boolean DieCheck (int rolls) {
-        int j = 0;
         boolean valid = false;
         double exp = rolls/6.0;
         double chi2[] = {0,0,0,0,0,0};
         double ChiCrit = 11.070; //critical value for df = 5 chi-squared.
 
-        while (j < rolls) {
+        for (int j = 0; j < rolls; j++){
             roll();
-            j++;
         }
 
         for (int i = 0; i <= 5; i++) {
