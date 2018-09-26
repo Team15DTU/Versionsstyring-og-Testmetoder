@@ -1,7 +1,6 @@
 package spil;
 
 import sun.applet.Main;
-
 import java.util.Random;
 import java.lang.Math;
 

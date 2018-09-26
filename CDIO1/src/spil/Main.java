@@ -1,6 +1,7 @@
 package spil;
 
 import spil.Die;
+import java.util.Scanner;
 
 /**
  * @author Gruppe 15
@@ -19,14 +20,34 @@ public class Main {
 
     public static void main (String args[]) {
 
+        Scanner scanner = new Scanner();
+
         Die die1 = new Die(); //initialiserer instance af terningen.
         Die die2 = new Die();
+        Player player1 = new Player();
+        System.out.println("Set player name: ");
+        Player player2 = new Player();
+        System.out.println("Set player name: ");
+
 
         if (die1.DieCheck(10000)) { //test af en terning genne Chi2 test.
             System.out.println("The tested dice is true.");
         } else {
             System.out.println("The tested dice is false.");
         }
+
+
+
+
+        while (player1.score < 40 && player2.score < 40) {
+
+            System.out.println("Press r to roll");
+
+
+        }
+        die1.roll();
+        die2.roll();
+        System.out.println("You rolled "+die1.FaceValue+" and "+die2.FaceValue);
  }
 
     /*
