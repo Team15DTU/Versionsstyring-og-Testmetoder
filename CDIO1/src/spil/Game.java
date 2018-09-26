@@ -1,5 +1,6 @@
 package spil;
 
+import java.util.Scanner;
 //import sun.applet.Main;
 
 import java.util.Random;
@@ -20,15 +21,40 @@ import java.lang.Math;
 
 public class Game {
 
-    int Die1value, Die2value;   // Number showing on the first die.
+    Scanner scanner = new Scanner(System.in);
+    String input;
 
-    public Game() {
-        roll();
+    public void theGame (Player player1, Player player2, Die die1, Die die2){
+
+        System.out.println("Type first player name:");
+        player1.name = scanner.next();
+        System.out.println("Type second player name:");
+        player2.name = scanner.next();
+
+        while (player1.score < 40 && player2.score < 40) {
+
+            System.out.println("Press 'r' to roll dice for "+player1.name);
+            input = scanner.next();
+            die1.roll();
+            die2.roll();
+            System.out.println("You rolled "+die1.FaceValue+" and "+die2.FaceValue);
+            player1.score=player1.score+die1.FaceValue+die2.FaceValue;
+            System.out.println("Your score is "+player1.score+"\n");
+            System.out.println("Press 'r' to roll dice for "+player2.name);
+            input=scanner.next();
+            die1.roll();
+            die2.roll();
+            player2.score=player2.score+die1.FaceValue+die2.FaceValue;
+            System.out.println("You rolled "+die1.FaceValue+" and "+die2.FaceValue);
+            System.out.println("Your score is "+player2.score+"\n");
+        }
+
+        if(player1.score>player2.score){
+        System.out.printf(player1.name+" won!");
+        }else{
+        System.out.printf(player2.name+" won!");
+        }
+
     }
 
-    //method roll to roll the dice
-    public void roll() {
-        Die1value = (int)(Math.random()*6) + 1;
-        Die2value = (int)(Math.random()*6) + 1;
-    }
 }
