@@ -21,8 +21,15 @@ import java.lang.Math;
 public class Die {
 
     int FaceValue;
+    int[] faces = {0,0,0,0,0,0};
 
-    public boolean DieCheck (int rolls) {   //Denne funnktion tester en terning mod et antal kast med Chi2 testen.
+    /**
+     * Denne funktion tester en terning mod et antal kast med Chi2 testen.
+     *
+     * @param rolls
+     * @return
+     */
+    public boolean DieCheck (int rolls) {
         int j = 0;
         boolean valid = false;
         double exp = rolls/6.0;
@@ -46,13 +53,18 @@ public class Die {
         return valid;
     }
 
-    int[] faces = {0,0,0,0,0,0};
-
+    /**
+     *
+     */
     public void roll() {        //Denne funktion 'kaster' terningen og sætter dens 'FaceValue' til den slåede værdi.
         FaceValue = (int)(Math.random()*6) + 1;
         DieSwitch(FaceValue);
         }
 
+    /**
+     *
+     * @param value
+     */
     public void DieSwitch (int value) {     //Denne funktion noterer hvor mange gange et tal er slået.
         switch (value) {
             case 1:
