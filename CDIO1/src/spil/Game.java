@@ -22,7 +22,6 @@ import java.lang.Math;
 public class Game {
 
     Scanner scanner = new Scanner(System.in);
-    String input;
 
     public void theGame (Player player1, Player player2, Die die1, Die die2){
 
@@ -38,7 +37,7 @@ public class Game {
             turn1.turn(player1, die1, die2);
             System.out.println("Your score is "+player1.score+"\n");
 
-            while (player1.score < 40 && player2.score < 40) {
+            if (player1.score < 40 && player2.score < 40) {
                 turn1.turn(player2, die1, die2);
                 System.out.println("Your score is "+player2.score+"\n");
             }
@@ -51,7 +50,5 @@ public class Game {
         }
 
     }
-
-
 
 }
