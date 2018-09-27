@@ -26,6 +26,8 @@ public class Game {
 
     public void theGame (Player player1, Player player2, Die die1, Die die2){
 
+        Turn turn1 = new Turn();
+
         System.out.println("Type first player name:");
         player1.name = scanner.next();
         System.out.println("Type second player name:");
@@ -33,20 +35,13 @@ public class Game {
 
         while (player1.score < 40 && player2.score < 40) {
 
-            System.out.println("Press 'r' to roll dice for "+player1.name);
-            input = scanner.next();
-            die1.roll();
-            die2.roll();
-            System.out.println("You rolled "+die1.FaceValue+" and "+die2.FaceValue);
-            player1.score=player1.score+die1.FaceValue+die2.FaceValue;
+            turn1.turn(player1, die1, die2);
             System.out.println("Your score is "+player1.score+"\n");
-            System.out.println("Press 'r' to roll dice for "+player2.name);
-            input=scanner.next();
-            die1.roll();
-            die2.roll();
-            player2.score=player2.score+die1.FaceValue+die2.FaceValue;
-            System.out.println("You rolled "+die1.FaceValue+" and "+die2.FaceValue);
-            System.out.println("Your score is "+player2.score+"\n");
+
+            while (player1.score < 40 && player2.score < 40) {
+                turn1.turn(player2, die1, die2);
+                System.out.println("Your score is "+player2.score+"\n");
+            }
         }
 
         if(player1.score>player2.score){
@@ -56,5 +51,7 @@ public class Game {
         }
 
     }
+
+
 
 }
