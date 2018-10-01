@@ -30,8 +30,11 @@ public class Dice {
 		else if (d3+1==5) {
 			counter5++;
 		}
-		else (d3+1==6) {
+		else if (d3+1==6) {
 			counter6++;
+		}
+		else {
+			System.out.println("FEJL!");
 		}
 	}
 	
