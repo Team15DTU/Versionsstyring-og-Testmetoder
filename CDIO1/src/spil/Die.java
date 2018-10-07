@@ -3,7 +3,6 @@ package spil;
 // import sun.applet.Main;
 
 import java.util.Random;
-import java.lang.Math;
 
 /**
  * @author Gruppe 15
@@ -45,7 +44,7 @@ public class Die {
 
         double chiSum = chi2[0]+chi2[1]+chi2[2]+chi2[3]+chi2[4]+chi2[5];
 
-        if (chiSum < ChiCrit) {
+        if (chiSum <= ChiCrit) {
             valid = true;
         }
         return valid;
@@ -55,7 +54,10 @@ public class Die {
      *
      */
     public void roll() {        //Denne funktion 'kaster' terningen og sætter dens 'FaceValue' til den slåede værdi.
-        FaceValue = (int)(Math.random()*6) + 1;
+
+        Random generator = new Random(); // Laver en random funktion, som kan bruges senere.
+
+        FaceValue = generator.nextInt(6) + 1; // FaceValue tildeles et tilfældigt tal mellem 1-6
         DieSwitch(FaceValue);
         }
 
