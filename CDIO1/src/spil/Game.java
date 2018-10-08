@@ -37,10 +37,9 @@ public class Game {
             turn1.turn(player1, die1, die2);
             System.out.println("Your score is "+player1.score+"\n");
 
-            if (player1.score < 40 && player2.score < 40) {
-                turn1.turn(player2, die1, die2);
-                System.out.println("Your score is "+player2.score+"\n");
-            }
+            turn1.turn(player2, die1, die2);
+            System.out.println("Your score is "+player2.score+"\n");
+
         }
 
         if(player1.score>player2.score){
