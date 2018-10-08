@@ -27,7 +27,7 @@ public class Turn {
             System.out.println("You rolled two similar and get an extra turn!");
             turn(player, die1, die2);
         }
-
+        
     }
 
 }
